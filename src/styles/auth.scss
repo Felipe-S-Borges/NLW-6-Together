@@ -114,3 +114,37 @@
         }
     }
 }
+
+
+@media (max-width: 672px){
+    body{
+        padding: 0 0;
+    }
+    #page-auth{
+        flex-direction: column-reverse;
+        aside{
+            flex: 1;
+            height: 30vh;
+            background-image: url('../assets/images/illustration.svg');
+            display: none;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            
+            > img{
+                display: none;
+            }
+        }
+        main{
+            flex: 1;
+            padding: 0 0;
+            background-image: url('../assets/images/illustrationpb.png');
+            background-color: rgba(131, 90, 253,0.2);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            padding-top: 3rem;
+        }
+    }
+  
+}

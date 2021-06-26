@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 100%;
+}
 
 body{
     background: #f8f8f8;
@@ -10,5 +13,19 @@ body{
 }
 
 body, input, button, textarea{
-    font: 400 16px 'Roboto',sans-serif;
+    font: 400 1rem 'Roboto',sans-serif;
+}
+
+@media (max-width: 830px){
+    html{
+        font-size: 75%;
+    }
+   
+}
+
+@media (max-width: 425px){
+    html{
+        font-size: 75%;
+    }
+    
 }

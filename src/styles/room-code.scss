@@ -26,3 +26,16 @@
         font-weight: 500;
     }
 }
+
+@media (max-width: 530px){
+    #page-room{
+        .content{
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.875rem;
+            
+        }
+    }
+ 
+  
+}
