@@ -10,11 +10,13 @@ import { useAuth } from '../hooks/useAuth';
 import { FormEvent } from 'react';
 import { useState } from 'react';
 import { database } from '../services/firebase';
+import { useTheme } from '../hooks/useTheme';
 
 export function Home(){
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth();
     const [roomCode, setRoomCode] = useState('');
+    const {theme, toggleTheme} = useTheme();
 
     async function handleCreateRoom(){
         if(!user){
@@ -53,6 +55,8 @@ export function Home(){
             </aside>
             <main>
                 <div className="main-content">
+                    <h1>{theme}</h1>
+                    <button className="theme-button" onClick={toggleTheme} >theme</button>
                     <img src={logoImg} alt="Letmeask" />
                     <button className="create-room" onClick={handleCreateRoom}>
                         <img src={googleIcon} alt="Logo do google" />
