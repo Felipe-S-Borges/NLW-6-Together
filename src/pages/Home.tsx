@@ -2,6 +2,7 @@
 import {useHistory} from 'react-router-dom'
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
+import logoImgDark from '../assets/images/logo-dark.svg';
 import googleIcon from '../assets/images/google-icon.svg';
 import '../styles/auth.scss';
 import { Button } from '../components/Button';
@@ -11,6 +12,7 @@ import { FormEvent } from 'react';
 import { useState } from 'react';
 import { database } from '../services/firebase';
 import { useTheme } from '../hooks/useTheme';
+import { ThemeButton } from '../components/ThemeButton';
 
 export function Home(){
     const history = useHistory();
@@ -47,7 +49,9 @@ export function Home(){
     }
 
     return(
+        
         <div id="page-auth">
+            <ThemeButton theme={toggleTheme} />
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -55,9 +59,9 @@ export function Home(){
             </aside>
             <main>
                 <div className="main-content">
-                    <h1>{theme}</h1>
-                    <button className="theme-button" onClick={toggleTheme} >theme</button>
-                    <img src={logoImg} alt="Letmeask" />
+                    
+                   
+                    <img src={theme == 'light'? logoImg : logoImgDark} alt="Letmeask" />
                     <button className="create-room" onClick={handleCreateRoom}>
                         <img src={googleIcon} alt="Logo do google" />
                         Crie sua sala com o Google

@@ -25,7 +25,8 @@ export function ThemeContextProvider(props: ThemeContextProviderProps){
     })
 
     useEffect(()=>{
-       localStorage.setItem('theme',currentTheme) 
+       localStorage.setItem('theme',currentTheme);
+       document.getElementsByTagName('html')[0].className = currentTheme;
     },[currentTheme])
 
     function toggleTheme(){

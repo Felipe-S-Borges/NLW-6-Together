@@ -4,8 +4,8 @@
     height: 100vh;
     aside{
         flex: 7;
-        background: #835afd;
-        color: #fff;
+        background: var(--Pulple);
+        color: var(--White);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -22,7 +22,7 @@
             font-size: 1.5rem;
             line-height: 2rem;
             margin-top: 1rem;
-            color: #f8f8f8;
+            color: var(--White);
         }
     }
     main{
@@ -41,6 +41,7 @@
         text-align: center;
         >img{
             align-self: center;
+            height: 6rem;
         }
         h2{
             font-size: 1.5rem;
@@ -52,8 +53,8 @@
                 height: 3.125rem;
                 border-radius: 0.5rem;
                 padding: 0 1rem;
-                background: #fff;
-                border: 1px solid #a8a8b3;
+                background: var(--Suprime-White);
+                border: 1px solid var(--Ligh-Gray);
             }
             button{
                 margin-top: 1rem;
@@ -64,10 +65,10 @@
         }
         p{
             font-size: 0.875rem;
-            color: #737380;
+            color: var(--Jean-Gray);
             margin-top: 1rem;
             a{
-                color: #e559f9;
+                color: var(--Pinky);
             }
         }
 
@@ -77,8 +78,8 @@
         height: 50px;
         border-radius: 0.5rem;
         font-weight: 500;
-        background: #ea4335;
-        color: #fff;
+        background: var(--Red);
+        color: var(--Suprime-White);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -94,7 +95,7 @@
     }
     .separator{
         font-size: 0.875rem;
-        color: #a8a8b3;
+        color: var(--Ligh-Gray);
         margin: 2rem 0;
         display: flex;
         align-items: center;
@@ -102,14 +103,14 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: #a8a8b3;
+            background: var(--Ligh-Gray);
             margin-right: 1rem;
         }
         &::after{
             content: '';
             flex: 1;
             height: 1px;
-            background: #a8a8b3;
+            background: var(--Ligh-Gray);
             margin-left: 1rem;
         }
     }
@@ -139,7 +140,7 @@
             flex: 1;
             padding: 0 0;
             background-image: url('../assets/images/illustrationpb.png');
-            background-color: rgba(131, 90, 253,0.2);
+            background-color: var(--Mobile-Purple);
             background-position: center bottom;
             background-repeat: no-repeat;
             background-size: 80%;

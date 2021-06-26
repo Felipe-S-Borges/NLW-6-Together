@@ -1,0 +1,145 @@
+.theme-button{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    transform: scale(0.2);
+}
+
+.toggle--checkbox{
+    display: none;
+}
+
+.toggle--label{
+    width: 200px;
+    height: 100px;
+    background: lightblue;
+    border-radius: 100px;
+    border: 5px solid var(--Pulple);
+    display: flex;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    transition: all 350ms ease-in;
+}
+
+.toggle--label::before{
+    animation-name: reverse;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    transition: all 350ms ease-in;
+    content: '';
+    width: 78px;
+    height: 78px;
+    border: 5px solid yellow;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 82px;
+    background: rgb(255, 246, 120);
+}
+
+@keyframes reverse{
+    0%{
+        left: 104px;
+        width: 82px;
+    }
+    60%{
+        left: 72px;
+        width: 112px;
+    }
+    100%{
+        left: 4px;
+    }
+}
+
+
+
+.toggle--label-background{
+    width: 10px;
+    height: 5px;
+    border-radius: 5px;
+    position: relative;
+    background: white;
+    left: 135px;
+    top: 45px;
+    transition: all 150ms ease-in;
+}
+
+.toggle--label-background::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    background: white;
+    left: -20px;
+    transition: all 150ms ease-in;
+}
+.toggle--label-background::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    background: white;
+    left: -10px;
+    transition: all 150ms ease-in;
+}
+
+.toggle--checkbox:checked + .toggle--label::before{
+    background: white;
+    border-color: rgb(173, 173, 173);
+    animation-name: switch;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+}
+@keyframes switch{
+    0%{
+        left: 4px;
+    }
+    60%{
+        left: 4px;
+        width: 112px;
+    }
+    100%{
+        left: 104px;
+        width: 82px;
+    }
+}
+
+.toggle--label::after{
+    transition-delay: 0ms;
+    transition: all 250ms ease-in;
+    position: absolute;
+    content: '';
+    box-shadow: rgb(211, 209, 209) -13px 0 0 2px, rgb(223, 222, 222) -24px 14px 0 -2px ;
+    left: 143px;
+    top: 23px;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 50%;
+    opacity: 0;
+}
+.toggle--checkbox:checked + .toggle--label::after{
+    transition-delay: 350ms;
+    opacity: 1;
+}
+
+.toggle--checkbox:checked + .toggle--label .toggle--label-background{
+    left: 60px;
+    width: 5px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background::before{
+    width: 5px;
+    height: 5px;
+    top: -25px;
+}
+.toggle--checkbox:checked + .toggle--label .toggle--label-background::after{
+    width: 5px;
+    height: 5px;
+    left: -30px;
+    top: 20px;
+}
