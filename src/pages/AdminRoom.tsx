@@ -4,6 +4,7 @@ import checkImg from '../assets/images/check.svg';
 import answeredImg from '../assets/images/answer.svg'
 import deleteImg from '../assets/images/delete.svg'
 import logoImg from '../assets/images/logo.svg';
+import logoImgDark from '../assets/images/logo-dark.svg';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import { FormEvent, useState } from 'react';
@@ -14,6 +15,8 @@ import { type } from 'os';
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
 import { async } from 'q';
+import { useTheme } from '../hooks/useTheme';
+import { ThemeButton } from '../components/ThemeButton';
 
 
 
@@ -30,6 +33,7 @@ export function AdminRoom(){
     //const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
     const {title,questions} = useRoom(roomId);
+    const {theme, toggleTheme} = useTheme();
 
 async function handleEndRoom() {
 
@@ -61,9 +65,10 @@ async function handleHighlightQuestion(questionId:string){
 
     return(
         <div id="page-room">
+            <ThemeButton theme={toggleTheme} />
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <img src={theme == 'light'? logoImg : logoImgDark} alt="Letmeask" />
                     <div>
                         <RoomCode code={roomId} />
                         <Button onClick={handleEndRoom} isOutlined> Encerrar sala</Button>

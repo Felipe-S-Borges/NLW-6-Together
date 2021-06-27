@@ -1,6 +1,7 @@
 import {Link, useHistory} from 'react-router-dom';
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
+import logoImgDark from '../assets/images/logo-dark.svg';
 import googleIcon from '../assets/images/google-icon.svg';
 import '../styles/auth.scss';
 import { Button } from '../components/Button';
@@ -11,11 +12,15 @@ import {FormEvent} from 'react';
 import { useState } from 'react';
 import { database } from '../services/firebase';
 import userEvent from '@testing-library/user-event';
+import { ThemeButton } from '../components/ThemeButton';
+import { useTheme } from '../hooks/useTheme';
+
 export function NewRoom(){
 
     const {user} = useAuth();
     const history = useHistory();
     const [newRoom, setNewRoom] = useState('')
+    const {theme, toggleTheme} = useTheme();
 
     async function handleCreateRoom(event:FormEvent){
         event.preventDefault();
@@ -34,6 +39,7 @@ export function NewRoom(){
 
     return(
         <div id="page-auth">
+            <ThemeButton theme={toggleTheme} fixed="1rem"/>
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -41,7 +47,7 @@ export function NewRoom(){
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <img src={theme == 'light'? logoImg : logoImgDark} alt="Letmeask" />
                     
                     <h2>Criar uma nova sala</h2>
                     <form onSubmit={handleCreateRoom}>

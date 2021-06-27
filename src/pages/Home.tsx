@@ -51,7 +51,7 @@ export function Home(){
     return(
         
         <div id="page-auth">
-            <ThemeButton theme={toggleTheme} />
+            <ThemeButton theme={toggleTheme} fixed="1rem" />
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>

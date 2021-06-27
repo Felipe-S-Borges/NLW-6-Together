@@ -1,5 +1,5 @@
 .theme-button{
-    position: fixed;
+    position: absolute;
     top: 1rem;
     right: 1rem;
     transform: scale(0.2);
@@ -142,4 +142,27 @@
     height: 5px;
     left: -30px;
     top: 20px;
+}
+
+@media(min-width:630px)and(max-width:1285px){
+    .theme-button{
+        
+        top: 8rem;
+        
+    }
+}
+@media(min-width:530px)and(max-width:630px){
+    .theme-button{
+        
+        top: 10rem;
+        
+    }
+}
+
+@media(max-width:530px){
+    .theme-button{
+        
+        top: 1rem;
+        
+    }
 }

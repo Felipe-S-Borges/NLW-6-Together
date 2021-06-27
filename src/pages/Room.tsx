@@ -1,6 +1,7 @@
 import {useParams} from 'react-router-dom';
 import '../styles/room.scss';
 import logoImg from '../assets/images/logo.svg';
+import logoImgDark from '../assets/images/logo-dark.svg';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import { FormEvent, useState } from 'react';
@@ -10,6 +11,8 @@ import { useEffect } from 'react';
 import { type } from 'os';
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
+import { ThemeButton } from '../components/ThemeButton';
+import { useTheme } from '../hooks/useTheme';
 
 
 
@@ -25,6 +28,7 @@ export function Room(){
     const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
     const {title,questions} = useRoom(roomId);
+    const {theme, toggleTheme} = useTheme();
     
 
     
@@ -74,9 +78,10 @@ export function Room(){
 
     return(
         <div id="page-room">
+             <ThemeButton theme={toggleTheme} />
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <img src={theme == 'light'? logoImg : logoImgDark} alt="Letmeask" />
                     <RoomCode code={roomId} />
                 </div>
             </header>
